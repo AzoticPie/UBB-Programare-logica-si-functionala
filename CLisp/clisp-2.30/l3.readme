@@ -1,0 +1,16 @@
+3.  Sa se construiasca o functie care verifica daca un atom e membru al unei liste nu neaparat liniara.
+
+;(is_member '(A (B) F (C (D) (E))) 'Z)
+
+is_member(l1...ln, V) = {
+    (true), l atom si l = V
+    (false), l atom si l != verifica
+    (true), n>0 si l1 e atom si l1 = V
+    OR (is_member li V), i=2,n si n>0
+}
+
+helper(l, V) = {
+    ;unde (r) = is_member(l n) 
+    true, r = true
+    false, r = false
+}

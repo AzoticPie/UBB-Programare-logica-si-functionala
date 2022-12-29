@@ -1,0 +1,8 @@
+(defun nrap(e l)
+   (cond
+     ((null l) 0)
+     ((equal (car l) e) (+ 1 (nrap e (cdr l))))
+     ((atom (car l)) (nrap e (cdr l)))
+     (t (+ (nrap e (car l)) (nrap e (cdr l))))
+   )
+) 

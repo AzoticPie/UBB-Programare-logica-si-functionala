@@ -1,0 +1,39 @@
+3. Se  da  sirul l1,...,ln. Se  cere  sa  se  determine  toate  subsirurile strict crescatoare ale sirului a.
+ex: 
+A = [1,2,3, 3,4,5,6]
+
+ascendant_lists(l1...ln, flag) = {
+    [l1], flag = 1 and n > 0
+    ascendant_lists(l2...ln, 0), flag = 0 and n > 2 
+    l1 U ascendant_lists(l2...ln, 1), l1 < l2 and n >=2
+}
+
+f(l1...ln) = ascendant_lists(l1...ln, 0)
+
+
+
+
+
+
+
+
+
+
+
+backup:
+ascendant_lists([L1], 1, [L1]):-!.
+
+ascendant_lists([L1, L2|_], 1, [L1]):-
+    L1 >= L2,!.
+
+ascendant_lists([_,L2|T], 0, R):-
+    ascendant_lists([L2|T], 0, R).
+
+
+ascendant_lists([L1,L2|T], _, [L1|R]):-
+    L1 < L2,
+    ascendant_lists([L2|T], 1, R).
+
+ascendant_lists([L1|_], 1, [L1]).
+
+f(L, R):- ascendant_lists(L, 0, R).

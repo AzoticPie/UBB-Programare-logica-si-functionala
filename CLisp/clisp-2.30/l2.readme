@@ -1,0 +1,15 @@
+13.  Se da un arbore de tipul (2). Sa se afiseze calea de la radacina pana la un nod x dat.
+
+find_path(l1..Ln, node) = {
+    (), n=0
+    (l1), l1 = node
+    //unde path = find_path(l2) U ... U find_path(ln)
+    l1 U path, path != () 
+    (),  path = ()
+}
+
+        A
+       / \ 
+      B   C 
+         /  \
+        D    E 

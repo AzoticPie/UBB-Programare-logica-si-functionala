@@ -1,0 +1,24 @@
+--PLF P1 14--
+CONSULT
+
+a. Sa se scrie un predicat care testeaza egalitatea a doua multimi, fara sa se faca apel la diferenta a doua multimi.
+
+testEquality(A1,..,An; B1,...Bm) = {
+    false, n != m
+    isEqual(A1, ..., An; B1, ...Bn, length(A)), otherwise
+}
+
+isEqual(A1, ..., An; B1, ...Bn, N) = {
+    true, N = 0
+    false, A1 != B1
+    isEqual(A2, ... An; B2,... Bn; N-1), otherwise
+}
+
+________________________________________________________
+b. Definiti un predicat care selecteaza al n-lea element al unei liste.
+
+selectNth(L1, ... Ln, N) = {
+    L1, N = 1 and length(L1, ... Ln) > 0
+    selectNth(L2, ... Ln, N-1), N>1 and length(L1, ... Ln) > 0
+    false, N > 1 si n = 0
+}

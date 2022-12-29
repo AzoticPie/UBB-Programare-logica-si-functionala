@@ -1,0 +1,21 @@
+testSetP(L1..Ln, S1..Sm) = {
+    false, mylength(n) != mylength(m)
+    testSet(L1..Ln, S1..Sm), altfel
+}
+
+testSet(L1..Ln, S1..Sm) = {
+    true, n = 0
+    false, isAinSet(L1, S1..Sm) = false
+    testSet(L2..Ln, S1..Sm), altfel
+}
+
+isAinSet(A, S1..Sm) = {
+    false, m = 0
+    true, A = S1
+    isAinSet(A, S2..Sm)
+}
+
+mylength(L1..Ln) = {
+    0, n = 0
+    1 + mylength(L2..Ln), altfel
+}
